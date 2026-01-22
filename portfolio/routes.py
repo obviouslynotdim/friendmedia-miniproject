@@ -1,4 +1,3 @@
-from asyncio import Task
 from flask import render_template, request, redirect, url_for, flash
 from portfolio import db, app, bcrypt
 from portfolio.forms import RegisterForm, LoginForm, UpdateAccountForm

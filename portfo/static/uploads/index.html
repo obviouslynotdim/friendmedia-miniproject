@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Friend's Profiles</h2>
+    
+    <div class="row">
+        {% for friend in friends %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='uploads/' + friend.img) }}" class="card-img-top" alt="Profile Picture">
+                <div class="card-body">
+                    <h5 class="card-title">{{ friend.fullname }}</h5>
+                    <p class="card-text">{{ friend.role }}</p>
+                    <p class="card-text">{{ friend.bio }}</p>
+                    <a href="{{ url_for('friend_profile', friend_id=friend.id) }}" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
